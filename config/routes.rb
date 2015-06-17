@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root "static_pages#index"
   resources :exams, only: [:index, :show, :create, :update]
+  namespace :admin do
+    root to: "categories#index"
+    resources :categories
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

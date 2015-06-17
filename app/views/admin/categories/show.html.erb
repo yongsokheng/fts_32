@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-10">
+    <table class="table table-bordered table-hover">
+      <p><%= link_to t("buttons.add_new"), "#", class: "btn btn-primary" %>
+      <th>Question</th>
+      <th colspan="2">Actions</th>
+      <tbody class="category-row">
+        <%= render partial: "question", collection: @questions %>
+      </tbody>
+    </table>
+    <div class="paginate"><%= render "shared/paginate" %></div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<% provide :title, "Home" %>
+<div class="center jumbotron">
+  <h2><%= t "labels.welcome" %></h2>
+  <%= link_to t("links.sign_up"), new_user_registration_path, class: "btn btn-lg btn-primary" %>
+</div>

@@ -1,0 +1,6 @@
+<% if @category.errors.any? %>
+  $(".errors").html("<%= escape_javascript(render 'shared/errors', object: @category) %>")
+<% else %>
+  $(".category-row").html("<%= escape_javascript(render @categories) %>")
+  $("#form-modal").modal("hide")
+<% end %>

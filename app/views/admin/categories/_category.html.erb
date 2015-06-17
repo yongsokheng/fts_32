@@ -1,0 +1,14 @@
+<tr>
+  <td><%= category.name %></td>
+  <td><%= category.question_number %></td>
+  <td><%= category.duration %></td>
+  <td><%= link_to t("links.show"), [:admin, category] %></td>
+  <td><%= link_to t("links.edit"), edit_admin_category_path(category), remote: true,
+                  "data-toggle" => "modal",
+                  "data-target" => "#form-modal" %>
+  </td>
+  <td><%= link_to t("links.delete"), [:admin, category], method: :delete, 
+                  data: {confirm: t("messages.confirm_delete")}, 
+                  remote: true %>
+  </td>
+</tr
