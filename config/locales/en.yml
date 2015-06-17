@@ -40,3 +40,7 @@ en:
     delete_account: "Delete account"
     update: "Update"
     login: "Log in"
+    start_new: "Start New"
+    start: "Start"
+  flashs:
+    invalid: "Invalid"
