@@ -35,7 +35,6 @@ gem "mysql2"
 gem "devise"
 # gem "capistrano-rails", group: :development
 # Use mysql as the database for Active Record
-gem "materialize-sass"
 gem "bootstrap-sass"
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
