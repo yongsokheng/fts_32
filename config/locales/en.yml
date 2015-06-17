@@ -21,3 +21,16 @@
 
 en:
   hello: "Hello world"
+  menus:
+    home: "Home"
+    signup: "Sign Up"
+    login: "Login"
+  labels:
+    welcome: "Welcome to Framgia Examination"
+    framgia: "Framgia"
+    copyright: "Copy Right 2015"
+  links:
+    signup_now: "Sign up"
+    framgia_exam_system: "Framgia Exam System"
+  titles:
+    header: "Framgia E-Learning System"
