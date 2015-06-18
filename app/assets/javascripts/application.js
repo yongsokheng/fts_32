@@ -13,5 +13,22 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.countdown
 //= require_tree .
 //= require bootstrap
+
+function ready(){
+  $("#clock").countdown({
+    until: $("#duration").val(),
+    format: "HMS",
+    onExpiry: function(){
+      alert("Your exam is time out. We are going to submit your test automatically");
+      $(".btn-submit").trigger("click");
+      $(".btn-submit").hidden();
+    }
+  });
+}
+
+$(document).ready(ready);
+$(document).on("page:load", ready);
+$(document).on("page:update", ready);

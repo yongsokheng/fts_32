@@ -36,10 +36,14 @@ gem "devise"
 # gem "capistrano-rails", group: :development
 # Use mysql as the database for Active Record
 gem "bootstrap-sass"
+gem "rails_config"
+gem "will_paginate", "3.0.7"
+gem "bootstrap-will_paginate", "0.0.10"
+gem "jquery-countdown-rails"
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
   gem "byebug"
-
+  gem "faker", "1.4.2"
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem "web-console", "~> 2.0"
 

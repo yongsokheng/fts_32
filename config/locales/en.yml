@@ -31,16 +31,21 @@ en:
     signup: "Sign Up"
     edit: "Edit "
     cancel_account: "Cancel my account"
+    timer: "Time Remaining:"
   links:
     signup_now: "Sign up"
     framgia_exam_system: "Framgia Exam System"
   titles:
     header: "Framgia E-Learning System"
+    exam: "Examination"
   buttons:
     delete_account: "Delete account"
     update: "Update"
     login: "Log in"
     start_new: "Start New"
+    submit: "Submit"
     start: "Start"
+    view: "View"
   flashs:
     invalid: "Invalid"
+    success_submit: "Answer sheet save"

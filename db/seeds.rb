@@ -9,9 +9,9 @@
 User.create! username: "Sokheng", email: "a@gmail.com", password: "12345678", 
   password_confirmation: "12345678"
 
-Category.create! name: "Java", question_number: 20, duration: 20
-Category.create! name: "C#", question_number: 20, duration: 20
-Category.create! name: "Ruby", question_number: 20, duration: 20
+Category.create! name: "Java", question_number: 10, duration: 1
+Category.create! name: "C#", question_number: 20, duration: 1
+Category.create! name: "Ruby", question_number: 20, duration: 1
 
 categories = Category.all
 categories.each do |category|
@@ -23,10 +23,12 @@ end
 
 questions = Question.all
 questions.each do |question|
-  4.times do
+  3.times do
     option = Faker::Lorem.word
     question.options.create! option: option
   end
+  option = Faker::Lorem.word
+  question.options.create! option: option, correct_option: true
 end
 
 user = User.first

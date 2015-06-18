@@ -1,8 +1,8 @@
 <div class="form-exam">
-  <%= form_for @exam do |f| %>
+  <%= form_for @exam, html: {class: "form-inline"} do |f| %>
     <%= f.select :category_id, 
       options_from_collection_for_select(Category.order(:name), 
-      :id, :name), {}, {class: "form-control"} %>
+      :id, :name), {}, {class: "form-control select-box"} %>
     <%= f.submit t("buttons.start_new"), class: "btn btn-primary" %>
   <% end %>
 </div>

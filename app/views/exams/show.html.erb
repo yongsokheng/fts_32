@@ -1,0 +1,18 @@
+<% provide :title, @category.name %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-1">
+    <div class="title">
+      <center><b><h2><%= @category.name %></h2></b></center>
+      <%= hidden_field_tag :duration, @duration %>
+    </div>
+    <% if @exam.time_out? %>
+      <%= render "exam_form", disabled: true %>
+    <% else %>
+      <%= render "exam_form", disabled: false %>
+    <% end %>
+  </div>
+  <div class="col-md-2 col-md-offset-1 timer">
+    <h4><%= t "labels.timer" %></h4>
+    <div id="clock"></div>
+  </div>
+</div>
