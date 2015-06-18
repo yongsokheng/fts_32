@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 20150617023935) do
 
   create_table "exams", force: :cascade do |t|
     t.string   "result",      limit: 255
-    t.boolean  "checked",     limit: 1
+    t.string   "status",      limit: 255, default: "Testing"
     t.integer  "test_time",   limit: 4
     t.integer  "user_id",     limit: 4
     t.integer  "category_id", limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
 
   add_index "exams", ["category_id"], name: "index_exams_on_category_id", using: :btree

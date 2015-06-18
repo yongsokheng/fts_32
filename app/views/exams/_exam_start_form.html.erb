@@ -1,0 +1,8 @@
+<div class="form-exam">
+  <%= form_for @exam do |f| %>
+    <%= f.select :category_id, 
+      options_from_collection_for_select(Category.order(:name), 
+      :id, :name), {}, {class: "form-control"} %>
+    <%= f.submit t("buttons.start_new"), class: "btn btn-primary" %>
+  <% end %>
+</div>
