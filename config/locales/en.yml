@@ -20,17 +20,23 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   menus:
     home: "Home"
     signup: "Sign Up"
-    login: "Login"
+    login: "Log in"
   labels:
     welcome: "Welcome to Framgia Examination"
     framgia: "Framgia"
     copyright: "Copy Right 2015"
+    signup: "Sign Up"
+    edit: "Edit "
+    cancel_account: "Cancel my account"
   links:
     signup_now: "Sign up"
     framgia_exam_system: "Framgia Exam System"
   titles:
     header: "Framgia E-Learning System"
+  buttons:
+    delete_account: "Delete account"
+    update: "Update"
+    login: "Log in"

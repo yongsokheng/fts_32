@@ -1,8 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "materialize";
 
 $gray-medium-light: #eaeaea;
+
+body {
+  padding-top: 80px;
+}
 
 footer {
   margin-top: 200px;
@@ -27,7 +30,22 @@ footer {
     }
   }
 }
-.button {
-  height: 300px;
-  margin-bottom: 2px;
+
+.jumbotron {
+  text-align: center;
+}
+
+#error_explanation {
+  color: #B23838;
+  ul {
+    color: gray;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }

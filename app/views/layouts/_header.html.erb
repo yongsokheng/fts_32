@@ -1,12 +1,29 @@
-<nav>
-  <div class="nav-wrapper">
-    <div class="left hiden-on-med-and-down">
-      <h5><%= link_to t("links.framgia_exam_system"), "#" %></h5>
-    </div>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><%= link_to t("menus.home"), "#" %></li>
-      <li><%= link_to t("menus.signup"), "#" %></li>
-      <li><%= link_to t("menus.login"), "#" %></li>
-    </ul>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav>
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to t("labels.framgia_exam_system"), "#" %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to t("menus.home"), "#" %></li>
+        <% if user_signed_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= current_user.username %><b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to t("menus.profile"), "#" %></li>
+              <li class="divider"></li>
+              <li><%= link_to t("menus.Setting"), edit_user_registration_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to t("menus.logout"), destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% else %>       
+          <li><%= link_to t("menus.signup"),  new_user_registration_path %></li>
+          <li><%= link_to t("menus.login"), new_user_session_path %></li>
+        <% end %>    
+      </ul>
+    </nav>
   </div>
-</nav>
+</header>
