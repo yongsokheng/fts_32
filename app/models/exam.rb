@@ -19,9 +19,9 @@ class Exam < ActiveRecord::Base
     if exams_questions.count > 0
       created_time = exams_questions.first.created_at
     else
-      created_time = Time.now
+      created_time = Time.now.utc
     end
-    Time.now > created_time + category.duration.minutes
+    Time.now.utc > created_time + category.duration.minutes
   end
 
   def start?

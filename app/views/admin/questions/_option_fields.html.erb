@@ -1,0 +1,9 @@
+<div class="form-group">
+  <%= f.label :option %>
+  <%= f.text_field :option, class: "form-control" %>
+  <%= f.check_box :correct_option, class: "checkbox" %>
+  <%= f.label :correct_option, Settings.answer.correct %>
+  <div style="float: right;">
+    <%= link_to_remove_fields t("link.remove"), f %>
+  </div>
+</div>

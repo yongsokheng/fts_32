@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "categories#index"
     resources :categories
+    resources :questions, except: [:index]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

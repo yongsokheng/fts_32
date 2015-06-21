@@ -43,6 +43,13 @@ en:
     header: "Framgia E-Learning System"
     exam: "Examination"
     categories: "Categories"
+    add_option: "Add Option"
+  titles:
+    header: "Framgia E-Learning System"
+    exam: "Examination"
+    show_question: "Question Detail"
+    new_question: "Add new Question"
+    edit_question: "Edit Question"
   buttons:
     delete_account: "Delete account"
     update: "Update"
@@ -60,3 +67,5 @@ en:
     save: "Save"
   messages: 
     confirm_delete: "Are you sure to delete!"
+    save: "Save"
+    save_success: "Save successfully"

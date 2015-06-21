@@ -1,0 +1,25 @@
+<%= form_for [:admin, @question] do |f| %>
+  <%= render "shared/errors", object: @question %>
+  <div class="form-group">
+    <h4><%= f.label :category %></h4>
+    <h5>
+      <%= f.select :category_id, 
+              options_from_collection_for_select(Category.order(:name), 
+                :id, :name), {}, {class: "form-control"} %>
+    </h5>  
+    <h4>
+      <%= f.label :question %>
+      <%= f.text_area :question, class: "form-control" %>
+    </h4>
+  </div>
+  <div class="form-area">
+    <h3>Options</h3>
+    <div class="form-group">
+      <%= f.fields_for :options do |option| %>
+        <%= render "option_fields", f: option %>
+      <% end %>
+      <%= link_to_add_fields t("links.add_answer"), f, :options %>
+    </div>
+  </div>
+  <%= f.submit t("buttons.save"), class: "btn btn-primary" %>
+<% end %>
