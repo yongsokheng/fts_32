@@ -1,8 +1,23 @@
 <tr>
-  <td><%= exam.created_at %></td>
+  <% exam.update_testing_to_unviewed %>
+  <td><%= exam.created_at.strftime("%d-%m-%Y %I:%M %p") %></td>
   <td><%= exam.category.name %></td>
   <td><%= exam.status %></td>
-  <td><%= exam.test_time %></td>
-  <td><%= exam.result %></td>
-  <td><%= link_to t("buttons.start"), "" %></td>
+  <td><%= exam.category.duration %></td>
+  <td><%= exam.category.question_number %></td>
+  <td>
+    <% if exam.viewed? %>
+      <% count_correct_option = exam.exams_questions.correct_options.count
+      total_question = exam.category.question_number
+      result = "#{count_correct_option}/#{total_question}" %>
+      <%= result %>
+    <% end %>
+  </td>
+  <td>
+    <% if exam.start? %>
+      <%= link_to t("buttons.start"), exam, class: "btn btn-primary" %>
+    <% else %>
+      <%= link_to t("buttons.view"), exam, class: "btn btn-success" %>
+    <% end %>
+  </td>
 </tr>

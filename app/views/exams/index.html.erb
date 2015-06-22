@@ -1,9 +1,20 @@
 <% provide :title, "Home" %>
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-8 col-md-offset-1">
     <%= render "exams/exam_start_form" %>
+    <%= will_paginate @exams %>
     <table class="table">
+      <thead>
+        <th>Created Date</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th>Duration: (mn)</th>
+        <th>Question number</th>
+        <th>Result</th>
+        <th></th>
+      </thead>
       <%= render @exams %>
     </table>
+    <%= will_paginate @exams %>
   </div>
 </div>

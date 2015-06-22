@@ -1,0 +1,21 @@
+<%= form_for @exam do |f| %>
+  <ol>
+    <%= f.fields_for :exams_questions do |ff| %>
+      <li><%= ff.object.question.question %></li>
+      <%= ff.collection_radio_buttons :option_id, ff.object.question.options, 
+        :id, :option, {}, {disabled: disabled} do |rb| %>
+        <%= rb.label(class: "radio"){rb.radio_button + rb.text} %>
+      <% end %>
+      <% if @exam.viewed? %>
+        <% if ff.object.option_id && ff.object.option.correct_option? %>
+          <div class='label label-success'><%=  Settings.answer.correct %></div>
+        <% else %>
+          <div class='label label-danger'><%=  Settings.answer.incorrect %></div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ol>
+  <% unless @exam.time_out? %>
+    <%= f.submit t("buttons.submit"), class: "btn btn-primary btn-lg btn-submit" %>
+  <% end %>
+<% end %>

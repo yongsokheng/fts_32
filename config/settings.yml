@@ -1,0 +1,8 @@
+status:
+  start: "Start"
+  testing: "Testing"
+  unviewed: "Unviewed"
+  viewed: "Viewed"
+answer:
+  correct: "Correct"
+  incorrect: "Incorrect"

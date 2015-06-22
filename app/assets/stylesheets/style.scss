@@ -7,6 +7,21 @@ body {
   padding-top: 80px;
 }
 
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 15px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
 footer {
   margin-top: 200px;
   padding-top: 5px;
@@ -48,4 +63,37 @@ footer {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+.radio {
+  padding-left: 20px;
+  font-weight: normal;
+}
+
+#clock{
+  font-size: 16px;
+  font-weight: bold;
+  border: none !important;
+  background-color: inherit !important;
+}
+
+.timer{
+  border: 1px solid #E6E6E6;
+  background-color: #FFFFCC;
+  float: right;
+  position: fixed;
+  right: 70px;
+  top: 70px;
+}
+.title{
+  border-bottom: 1px solid BLACK;
+  margin-bottom: 20px;
+}
+
+.select-box{
+  min-width: 80%;
+}
+
+.form-exam{
+  margin-bottom: 30px;
 }
