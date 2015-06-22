@@ -1,0 +1,13 @@
+<% provide :title, t("titles.show_question") %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><b><%= @question.category.name %></b></div>
+      <div class="panel-body">
+        <p><b>Question: <%= @question.question %></b></p>
+        <p><b>Options:</b></p>
+        <ol><%= render partial: "option", collection: @options %></ol>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<li>
+  <%= option.option %>
+  <% if option.correct_option? %>
+    <span class="label label-success"><%= Settings.answer.correct %></span>
+  <% else %>
+    <span class="label label-danger"><%= Settings.answer.incorrect %></span>
+  <% end %>
+</li>
