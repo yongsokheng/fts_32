@@ -1,4 +1,5 @@
 status:
+  all: "All"
   start: "Start"
   testing: "Testing"
   unviewed: "Unviewed"

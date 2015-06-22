@@ -9,6 +9,8 @@ class Exam < ActiveRecord::Base
   scope :select_random_question, ->(category){category.questions
     .limit(category.question_number)
     .order("RAND()")}
+  scope :find_by_status, ->(exam_status){where(status: "#{exam_status}")
+    .order created_at: :DESC}
 
   def create_exams_questions category
     question_ids = Exam.select_random_question(category).pluck :id

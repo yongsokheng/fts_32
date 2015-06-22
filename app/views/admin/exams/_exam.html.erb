@@ -1,0 +1,26 @@
+<tr>
+  <% exam.update_testing_to_unviewed %>
+  <td><%= exam.user.username %></td>
+  <td><%= exam.category.name %></td>
+  <td><%= exam.created_at.strftime("%d-%m-%Y %I:%M %p") %></td>
+  <td>
+    <% if exam.viewed? %>
+      <% count_correct_option = exam.exams_questions.correct_options.count
+      total_question = exam.category.question_number
+      result = "#{count_correct_option}/#{total_question}" %>
+      <%= result %>
+    <% end %>
+  </td>
+  <td>
+  <% if exam.unviewed? %>
+    <%= render "form_update_status", exam: exam %>
+  <% else %>
+    <%= exam.status %>
+  <% end %>
+  </td>
+  <td>
+    <% if exam.viewed? %>
+      <%= link_to t("buttons.view"), exam, class: "btn btn-primary" %>
+    <% end %>
+  </td>
+</tr>

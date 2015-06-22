@@ -44,6 +44,14 @@ function ready(){
   });
 }
 
+function radio_click(){
+  $(".radio-btn").click(function(){
+    $("#frm-status").submit();
+  });
+}
+
 $(document).ready(ready);
+$(document).ready(radio_click);
 $(document).on("page:load", ready);
+$(document).on("page:load", radio_click);
 $(document).on("page:update", ready);

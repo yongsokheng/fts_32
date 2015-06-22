@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     root to: "categories#index"
     resources :categories
     resources :questions, except: [:index]
+    resources :exams, only: [:index, :update] 
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
