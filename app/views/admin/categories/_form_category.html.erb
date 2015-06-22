@@ -1,0 +1,17 @@
+<div class="form-category">
+  <%= form_for [:admin, @category], remote: true do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+
+    <%= f.label :question_number %>
+    <%= f.text_area :question_number, row: "3", class: "form-control" %>
+
+    <%= f.label :duration %>
+    <%= f.text_area :duration, class: "form-control" %>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal"><%= t("buttons.close") %></button>
+      <%= f.submit t("buttons.save"), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

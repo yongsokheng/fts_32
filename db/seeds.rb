@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create! username: "Sokheng", email: "a@gmail.com", password: "12345678", 
-  password_confirmation: "12345678"
+  password_confirmation: "12345678",admin: true
 
 Category.create! name: "Java", question_number: 10, duration: 1
 Category.create! name: "C#", question_number: 20, duration: 1
@@ -34,3 +34,11 @@ end
 user = User.first
 user.exams.create! category_id: 1
 user.exams.create! category_id: 2
+
+10.times do
+  name = Faker::Commerce.department
+  number = Faker::Number.digit
+  Category.create name: name, 
+                  question_number: number,
+                  duration: number
+end

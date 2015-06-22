@@ -32,12 +32,17 @@ en:
     edit: "Edit "
     cancel_account: "Cancel my account"
     timer: "Time Remaining:"
+    category: "Category"
   links:
     signup_now: "Sign up"
     framgia_exam_system: "Framgia Exam System"
+    edit: "Edit"
+    delete: "Delete"
+    show: "Show"
   titles:
     header: "Framgia E-Learning System"
     exam: "Examination"
+    categories: "Categories"
   buttons:
     delete_account: "Delete account"
     update: "Update"
@@ -46,6 +51,12 @@ en:
     submit: "Submit"
     start: "Start"
     view: "View"
+    save: "Save"
   flashs:
     invalid: "Invalid"
     success_submit: "Answer sheet save"
+    close: "Close"
+    add_new: "Add New"
+    save: "Save"
+  messages: 
+    confirm_delete: "Are you sure to delete!"
