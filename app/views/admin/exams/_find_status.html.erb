@@ -1,0 +1,8 @@
+<div class="find-exam-status">
+  <%= form_for [:admin, @exam], html: {id: "frm-status"}, method: "get", remote: true do |f| %>
+    <% Settings.status.each do |name, value| %>
+      <%= f.radio_button :status, name, checked: value == "All", class: "radio-btn" %>
+      <%= f.label value %>
+    <% end %>
+  <% end %>
+</div>

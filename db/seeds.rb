@@ -34,11 +34,3 @@ end
 user = User.first
 user.exams.create! category_id: 1
 user.exams.create! category_id: 2
-
-10.times do
-  name = Faker::Commerce.department
-  number = Faker::Number.digit
-  Category.create name: name, 
-                  question_number: number,
-                  duration: number
-end
