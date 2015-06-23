@@ -4,17 +4,22 @@ class Admin::ExamsController < ApplicationController
 
   def index
     @exam = Exam.new
-    @exams = Exam.order created_at: :DESC
-    if params[:exam].present?
-      exam_status = params[:exam][:status]
-      @exams = Exam.find_by_status exam_status unless Settings.status.all.downcase == exam_status 
+    if params[:exam].nil? || Settings.status.all.downcase == params[:exam][:status]
+      @exams = Exam.paginate(page: params[:page]).order created_at: :DESC
+    else
+      @exams = Exam.find_by_status(params[:exam][:status]).paginate page: params[:page] 
     end
   end
 
   def update
     @exam = Exam.find params[:exam][:exam_id]
     @exam.update_attribute :status, Settings.status.viewed
-    @exams = Exam.order created_at: :DESC
+    if (user_id = params[:exam][:user_id]).present?
+      @exams = User.find(user_id).exams.paginate(page: params[:page]).
+        order created_at: :DESC
+    else
+       @exams = Exam.paginate(page: params[:page]).order created_at: :DESC
+    end
   end
 
   private 

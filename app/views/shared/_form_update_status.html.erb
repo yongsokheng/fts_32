@@ -1,4 +1,5 @@
 <%= form_for [:admin, exam], remote: true do |f| %>
   <%= f.hidden_field :exam_id, value: exam.id %>
+  <%= f.hidden_field :user_id, value: params[:id] %>
   <%= f.submit t("buttons.check"), class: "btn btn-primary" %>
 <% end %>

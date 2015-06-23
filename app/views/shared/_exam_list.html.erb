@@ -1,0 +1,13 @@
+<table class="table table-bordered table-hover">
+<%= will_paginate @exams %>
+  <th>Users</th>
+  <th>Categories</th>
+  <th>Exam Created</th>
+  <th>Result</th>
+  <th>View</th>
+  <th>Status</th>
+  <tbody class="exam-row">
+    <%= render @exams %>
+  </tbody>
+</table>
+<%= will_paginate @exams %>

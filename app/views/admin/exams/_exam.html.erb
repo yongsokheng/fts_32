@@ -13,7 +13,7 @@
   </td>
   <td>
   <% if exam.unviewed? %>
-    <%= render "form_update_status", exam: exam %>
+    <%= render "shared/form_update_status", exam: exam %>
   <% else %>
     <%= exam.status %>
   <% end %>

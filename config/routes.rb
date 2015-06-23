@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :questions, except: [:index]
     resources :exams, only: [:index, :update] 
+    resources :users, only: [:index, :show, :destroy]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

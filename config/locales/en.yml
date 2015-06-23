@@ -46,6 +46,9 @@ en:
     exam: "Examination"
     categories: "Categories"
     add_option: "Add Option"
+    users: "All Users"
+    header: "Framgia E-Learning System"
+    exam: "Examination"
     show_question: "Question Detail"
     new_question: "Add new Question"
     edit_question: "Edit Question"
@@ -66,6 +69,7 @@ en:
     close: "Close"
     add_new: "Add New"
     save: "Save"
+    delete: "Delete success"
   messages: 
     confirm_delete: "Are you sure to delete!"
     save: "Save"
