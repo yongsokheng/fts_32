@@ -45,5 +45,9 @@ class Exam < ActiveRecord::Base
       update_attribute :status, Settings.status.unviewed
     end
   end
-  
+
+  def create_not_start_after_hour? hour
+    create_peroid = (Time.now.utc - created_at) / 3600
+    start? && create_peroid > hour
+  end
 end
