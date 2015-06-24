@@ -24,6 +24,10 @@ en:
     home: "Home"
     signup: "Sign Up"
     login: "Log in"
+    admin: "Admin"
+    users: "Users"
+    categories: "Categories"
+    exams: "Examination"
   labels:
     welcome: "Welcome to Framgia Examination"
     framgia: "Framgia"
@@ -71,10 +75,9 @@ en:
     save: "Save"
     delete: "Delete success"
   messages: 
-    confirm_delete: "Are you sure to delete!"
+    confirm_delete: "Are you sure to delete?"
     save: "Save"
     save_success: "Save successfully"
-  messages:
     greeting: "Hello,"
     subject: "Examination not yet start"
     body: "You have created your exam for over 2 hours and not start yet."
