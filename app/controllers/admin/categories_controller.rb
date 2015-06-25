@@ -7,7 +7,9 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def show
-    @questions = Category.find(params[:id]).questions
+    @category = Category.find params[:id]
+    @questions = @category.questions
+      .paginate(page: params[:page]).order created_at: :DESC
   end
 
   def new
