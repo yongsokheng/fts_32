@@ -2,18 +2,30 @@
   <div class="container">
     <nav>
       <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to t("labels.framgia_exam_system"), "#", id: "logo" %></li>
+        <li><%= link_to t("labels.framgia_exam_system"), root_path, id: "logo" %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t("menus.home"), root_path %></li>
         <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <%= t "menus.admin" %><b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to t("menus.users"), admin_users_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to t("menus.exams"), admin_exams_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to t("menus.categories"), admin_categories_path %></li>
+              </ul>
+            </li>
+          <% end %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <%= current_user.username %><b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to t("menus.profile"), "#" %></li>
-              <li class="divider"></li>
               <li><%= link_to t("menus.Setting"), edit_user_registration_path %></li>
               <li class="divider"></li>
               <li><%= link_to t("menus.logout"), destroy_user_session_path, method: :delete %></li>

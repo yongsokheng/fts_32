@@ -3,7 +3,7 @@ task inform_user_task: :environment do
   exams = Exam.all
   exams.each do |exam|
     if exam.create_not_start_after_hour? 2
-      UserMailer.inform_user(exam).deliver_now
+      UserMailer.delay.inform_user exam
     end
   end
 end

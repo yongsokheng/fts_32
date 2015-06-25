@@ -13,6 +13,7 @@ class Admin::ExamsController < ApplicationController
 
   def update
     @exam = Exam.find params[:exam][:exam_id]
+    UserMailer.delay.inform_score(@exam)
     @exam.update_attribute :status, Settings.status.viewed
     if (user_id = params[:exam][:user_id]).present?
       @exams = User.find(user_id).exams.paginate(page: params[:page]).

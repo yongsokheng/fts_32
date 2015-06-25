@@ -1,0 +1,6 @@
+<%= t "messages.greeting" %> <%= @exam.user.username %>
+<% count_correct_option = @exam.exams_questions.correct_options.count
+  total_question = @exam.category.question_number
+  result = "#{count_correct_option}/#{total_question}" %>
+<%= t "messages.body_score" %><%= result %>
+

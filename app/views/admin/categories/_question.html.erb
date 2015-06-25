@@ -1,6 +1,8 @@
 <tr>
   <td><%= question.question %></td>
-  <td><%= link_to t("links.edit"), "#" %></td>
-  <td><%= link_to t("links.delete"), "#" %>
+  <td><%= link_to t("links.show"), [:admin, question] %></td>
+  <td><%= link_to t("links.edit"), edit_admin_question_path(question) %></td>
+  <td><%= link_to t("links.delete"), [:admin, question], method: :delete, 
+    data: {confirm: t("messages.confirm_delete")} %>
   </td>
 </tr>
