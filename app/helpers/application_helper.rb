@@ -8,6 +8,13 @@ module ApplicationHelper
     end
   end
 
+  def gravatar_for user, options = {size: 80}
+    gravatar_id = Digest::MD5::hexdigest user.email.downcase
+    size = options[:size]
+    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
+    image_tag gravatar_url, alt: user.username, class: "gravatar"
+  end
+
   def link_to_add_fields label, f, assoc
     new_obj = f.object.class.reflect_on_association(assoc).klass.new
     fields = f.fields_for assoc, new_obj,child_index: "new_#{assoc}" do |builder|
@@ -20,5 +27,9 @@ module ApplicationHelper
     field = f.hidden_field :_destroy
     link = link_to label, "#", onclick: "remove_fields(this)", remote: true
     field + link
+  end
+
+  def current_user? user
+    user == current_user
   end
 end
