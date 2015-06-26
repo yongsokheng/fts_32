@@ -30,6 +30,7 @@ gem "sdoc", "~> 0.4.0", group: :doc
 # gem "unicorn"
 
 # Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
 # gem "capistrano-rails", group: :development
 gem "mysql2"
 gem "devise"
@@ -41,6 +42,7 @@ gem "will_paginate", "3.0.7"
 gem "bootstrap-will_paginate", "0.0.10"
 gem "jquery-countdown-rails"
 gem "whenever", require: false
+gem "sidekiq"
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
   gem "byebug"

@@ -80,4 +80,6 @@ en:
     save_success: "Save successfully"
     greeting: "Hello,"
     subject: "Examination not yet start"
-    body: "You have created your exam for over 2 hours and not start yet."
+    body: "You have created your exam and not start yet."
+    subject_score: "Examination Score"
+    body_score: "Thanks you for joining Examination. You score is:"
